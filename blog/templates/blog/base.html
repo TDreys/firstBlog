@@ -9,14 +9,19 @@
 	</head>
 	<body>
 		<div class="page-header">
+
+			<h1><a href="/"> Blog </a></h1>
+			
+
+		</div>
+		<div class="add-post">
 			{% if user.is_authenticated %}
-				<a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+				<a href="{% url 'post_new' %}" class="top-menu"> Add Post <span class="glyphicon glyphicon-plus"></span></a>
 			{% endif %}
-			<h1><a href="/">Thomas Dreys Blog</a></h1>
 		</div>
 		<div class="content container">
 			<div class="row">
-				<div class="col-md-8">
+				<div>
 				{% block content %}
 				{% endblock %}
 				</div>
