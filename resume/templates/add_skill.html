@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="form">
+    <form method="POST" class='skillsForm'>
+			{% csrf_token %}
+      <h1>Add Skill</h1>
+      <p>Enter Skill:</p>
+			<input type="text" name="skill" id='skillField' class='formInput'><br>
+			<input type="submit" value="Submit" id='submitButton'>
+		</form>
+  </div>
+{% endblock %}

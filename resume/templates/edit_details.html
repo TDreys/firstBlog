@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class='form'>
+  	<form method="POST" class='detailsForm'>
+  		{% csrf_token %}
+      <h1>Edit Details</h1>
+      <p>Name:</p>
+			<input type="text" name="name" id='nameInputBox' class='formInput'><br>
+      <p>Phone Number:</p>
+			<input type="text" name="phoneNumber" id='phoneInputBox' class='formInput'><br>
+      <p>Email:</p>
+			<input type="email" name="email" id='emailInputBox' class='formInput'><br>
+			<input type="submit" value="Submit" id='submitButton'>
+  	</form>
+  </div>
+{% endblock %}

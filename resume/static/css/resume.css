@@ -1,0 +1,146 @@
+body{
+  font-family: arial;
+}
+
+.page-header {
+	background-color: rgba(111,111,111,0.6);
+	padding: 20px 20px 20px 20px;
+	display: flex;
+	margin-bottom: 10;
+	padding-bottom: 2%;
+	justify-content: center;
+	align-items: center;
+	margin-top: 0;
+	overflow: hidden;
+}
+
+.page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
+	color: #5f9e8a;
+	text-shadow: 3px 3px #111111;
+	font-size: 40pt;
+	text-decoration: none;
+	font-family: arial;
+}
+
+.details{
+  text-align: center;
+}
+
+.contact-details{
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  margin-bottom: 30px;
+}
+
+.content{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.column{
+  align-items: center;
+  width: 25%;
+  border-left: solid;
+  border-right: solid;
+  border-width: thin;
+  padding: 30px;
+}
+
+.columnHeading{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.addLink{
+  margin-top: 9px;
+  margin-left: 15px;
+  font-size: 20px;
+}
+
+.modelContent:hover{
+  background-color: #eeeeee;
+}
+
+.modelContent:hover > .deleteButton{
+  visibility: visible;
+}
+
+.modelContent{
+  border-top: solid;
+  border-width: thin;
+  padding: 10px;
+  width: 100%;
+}
+
+.skillColumn{
+  border-top: solid;
+  border-width: thin;
+  padding: 10px;
+  width: 100%;
+}
+
+.skillsDiv{
+  display: flex;
+  justify-content: center;
+}
+
+
+.detail{
+  margin-left: 20px;
+  margin-top: 10px;
+}
+
+#nameParagraph{
+  margin-bottom: 0;
+}
+
+.detailsForm, .educationForm, .experienceForm, .skillsForm{
+  width:30%;
+  position: relative;
+  left: 6%;
+}
+
+.form{
+  display: flex;
+  justify-content: center;
+}
+
+.formInput{
+  margin-bottom: 30px;
+  width: 70%;
+}
+
+.dateFields{
+  display: flex;
+  margin: 0;
+}
+
+.deleteButton{
+  visibility: hidden;
+  float: right;
+  margin-right: 10px;
+}
+
+.skillItem{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.skillItem:hover > .deleteButton{
+  visibility: visible;
+}
+
+.skillItem:hover{
+  background-color: #eeeeee;
+}
+
+.homeButton{
+  position: absolute;
+  right: 97%;
+  font-size: 25px;
+}

@@ -1,0 +1,101 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class='details'>
+    <h1 id='nameParagraph'>{{details.name}}</h1>
+    <div class='contact-details'>
+      <h4 class='detail' >Email:</h4>
+      <p class='detail' >{{details.email}} </p>
+      <h4 class='detail' >Phone: </h4>
+      <p class='detail' >{{details.phoneNumber}}</p>
+      {% if user.is_authenticated %}
+      <a class='detail' id='editDetailsLink' href="{% url 'edit_details' %}"> <span class="glyphicon glyphicon-pencil"></a>
+      {% endif %}
+    </div>
+</div>
+
+<div class='content'>
+	<div class = 'column'>
+    <div class = 'columnHeading'>
+  		<h1>
+  			Education
+  		</h1>
+      {% if user.is_authenticated %}
+      <a class = 'addLink' id='addEducationLink' href="{% url 'add_education' %}"><span class="glyphicon glyphicon-plus"></span></a>
+      {% endif %}
+    </div>
+		{% for education in educations %}
+    <div class='modelContent'>
+      {% if user.is_authenticated %}
+      <a href="{% url 'remove_education' pk=education.pk %}" class='deleteButton'><span class="glyphicon glyphicon-remove"></span></a>
+      {% endif %}
+    	<h3 class='schoolNames'>{{education.schoolName}}</h3>
+  		<p class='dates'>{{education.startDate}} - {{education.endDate}}</p>
+			<p class='subjects'>{{ education.subjects |linebreaksbr }}</p>
+    </div>
+		{% endfor %}
+	</div>
+
+  <div class='column'>
+    <div class = 'columnHeading'>
+  		<h1>
+  			Experience
+  		</h1>
+      {% if user.is_authenticated %}
+      <a class = 'addLink' id='addExperienceLink' href="{% url 'add_experience' %}"><span class="glyphicon glyphicon-plus"></span></a>
+      {% endif %}
+    </div>
+
+		{% for experience in experiences %}
+    <div class='modelContent'>
+      {% if user.is_authenticated %}
+      <a href="{% url 'remove_experience' pk=experience.pk %}" class='deleteButton'><span class="glyphicon glyphicon-remove"></span></a>
+      {% endif %}
+      <h3 class='jobTitles'>{{experience.jobTitle}}</h3>
+			<h4 class='companyNames'>{{experience.companyName}}</h4>
+			<p class='dates'>{{experience.startDate}} - {{experience.endDate}}</p>
+			<p class='jobDescriptions'>{{experience.jobDescription}}</p>
+			<p class='responsibilities'>{{ experience.responsibilities|linebreaksbr }}</p>
+    </div>
+		{% endfor %}
+	</div>
+
+	<div class = 'column'>
+    <div class = 'columnHeading'>
+  		<h1>
+  			Skills
+  		</h1>
+      {% if user.is_authenticated %}
+      <a class = 'addLink' id='addSkillLink' href="{% url 'add_skill' %}"><span class="glyphicon glyphicon-plus"></span></a>
+      {% endif %}
+    </div>
+
+    <div class = 'skillsDiv'>
+      <div class ='skillColumn'>
+  		{% for skill in skills %}
+        {% if forloop.counter|divisibleby:2 == False %}
+          <div class="skillItem">
+            <h4 class = 'skills'>- {{skill.skill}}</h4>
+            {% if user.is_authenticated %}
+            <a href="{% url 'remove_skill' pk=skill.pk %}" class='deleteButton'><span class="glyphicon glyphicon-remove"></span></a>
+            {% endif %}
+          </div>
+        {% endif %}
+  		{% endfor %}
+      </div>
+      <div class ='skillColumn'>
+  		{% for skill in skills %}
+        {% if forloop.counter|divisibleby:2 %}
+          <div class="skillItem">
+            <h4 class = 'skills'>- {{skill.skill}}</h4>
+            {% if user.is_authenticated %}
+            <a href="{% url 'remove_skill' pk=skill.pk %}" class='deleteButton'><span class="glyphicon glyphicon-remove"></span></a>
+            {% endif %}
+          </div>
+        {% endif %}
+  		{% endfor %}
+      </div>
+    </div>
+	</div>
+</div>
+{% endblock %}

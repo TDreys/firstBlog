@@ -21,7 +21,7 @@ body{
 	text-shadow: 3px 3px #111111;
 	font-size: 40pt;
 	text-decoration: none;
-	font-family: Vita; 
+	font-family: Vita;
 }
 .content {
 	width: 45%;
@@ -62,6 +62,12 @@ h1, h2, h3, h4 {
 	width: 100%;
 	margin-bottom: 30px;
 	margin-right: 10px;
+}
+
+.homeButton{
+  position: absolute;
+  right: 97%;
+  font-size: 25px;
 }
 
 @font-face{

@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="form">
+  <form method="POST" class='experienceForm'>
+    {% csrf_token %}
+    <h1>Add New Experience</h1>
+    <p>Job Title:</p>
+    <input type="text" name="jobTitle" id='jobTitleField' class="formInput"><br>
+    <p>Company Name:</p>
+    <input type="text" name="companyName" id='companyNameField' class="formInput"><br>
+    <div class="dateFields">
+      <div>
+        <p>Start Date:</p>
+        <input type="text" name="startDate" id='startDateField' class="formInput"><br>
+      </div>
+      <div>
+        <p>End Date:</p>
+        <input type="text" name="endDate" id='endDateField' class="formInput"><br>
+      </div>
+    </div>
+    <p>Job description: </p>
+    <textarea type="text" name="jobDescription" id='jobDescriptionField' class="formInput"></textarea><br>
+    <p>Responsibilities and Extra Info:</p>
+    <textarea type="text" name="responsibilities" id='responsibilitiesField' class="formInput"></textarea><br>
+    <input type="submit" value="Submit" id='submitButton'>
+  </form>
+</div>
+{% endblock %}

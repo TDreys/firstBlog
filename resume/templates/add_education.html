@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class='form'>
+    <form method="POST" class="educationForm">
+      {% csrf_token %}
+
+      <h1>Add New Education</h1>
+      <p>School:</p>
+      <input type="text" name="schoolName" id='schoolNameField' class="formInput"><br>
+      <div class="dateFields">
+        <div>
+          <p>Start Date:</p>
+          <input type="text" name="startDate" id='startDateField' class="formInput"><br>
+        </div>
+        <div>
+          <p>End Date:</p>
+          <input type="text" name="endDate" id='endDateField' class="formInput"><br>
+        </div>
+      </div>
+      <p>Qualifications:</p>
+      <textarea type="text" name="subjects" id='subjectsField' class="formInput"></textarea><br>
+      <input type="submit" value="Submit" id='submitButton'>
+    </form>
+  </div>
+{% endblock %}
