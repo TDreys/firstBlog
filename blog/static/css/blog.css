@@ -65,6 +65,7 @@ h1, h2, h3, h4 {
 }
 
 .homeButton{
+  color: #FFFFFF;
   position: absolute;
   right: 97%;
   font-size: 25px;

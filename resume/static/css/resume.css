@@ -15,8 +15,8 @@ body{
 }
 
 .page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
-	color: #5f9e8a;
-	text-shadow: 3px 3px #111111;
+	color: #FFFFFF;
+  text-shadow: 3px 3px #000000;
 	font-size: 40pt;
 	text-decoration: none;
 	font-family: arial;
@@ -141,6 +141,7 @@ body{
 
 .homeButton{
   position: absolute;
+  color: #FFFFFF;
   right: 97%;
   font-size: 25px;
 }
